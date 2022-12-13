@@ -37,7 +37,7 @@ CREATE TABLE `produk` (
 
 LOCK TABLES `produk` WRITE;
 /*!40000 ALTER TABLE `produk` DISABLE KEYS */;
-INSERT INTO `produk` VALUES (54,'Cs-137','2,000,000','Industri'),(235,'Tc-99','1,000,000','Medis');
+INSERT INTO `produk` VALUES (1,'Tritium','900,000','Energi'),(2,'Berrylium-10','700,000','Penelitian'),(3,'Fluorine-18','1,200,000','Medis'),(4,'Cobalt-40','2,100,000','Iradiasi'),(5,'Thorium-232','1,500,000','Bahan Bakar'),(6,'Plutonium-238','1,400,000','Energi'),(7,'Uranium-235','2,000,000','Bahan Bakar'),(8,'Iodine-131','1,300,000','Industri'),(54,'Cs-137','2,000,000','Industri'),(235,'Tc-99','1,000,000','Medis');
 /*!40000 ALTER TABLE `produk` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-29 20:21:32
+-- Dump completed on 2022-12-13 12:11:27

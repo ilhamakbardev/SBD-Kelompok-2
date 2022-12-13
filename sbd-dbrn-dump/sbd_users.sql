@@ -37,7 +37,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (12478,'Sultan','Bachiro, Yogyakarta','PT. Medicorp'),(13576,'Ilham','Hongkong','PT. Radiotesting ');
+INSERT INTO `users` VALUES (1,'edited udin patch','Jawa Barat','PT. NDT'),(2,'Budi','Placeholder','Company Inc.'),(3,'Charlie','Somewhere','Real Place '),(4,'Eli','Moskow','Nuka Coka'),(5,'Faraday','Polandia','PT. Porororo'),(6,'Gary','Seoul','Testing Inc.'),(7,'Hugo','Jerman','PT. Huge Bass'),(8,'Ivan','Kiev','Kevlar Inc.'),(12478,'Sultan','Bachiro, Yogyakarta','PT. Medicorp'),(13576,'Ilham','Hongkong','PT. Radiotesting ');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-29 20:21:32
+-- Dump completed on 2022-12-13 12:11:27
