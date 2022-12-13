@@ -1,0 +1,50 @@
+* {
+  border: 1px solid black;
+}
+
+body {
+  background-color: white;
+}
+
+#jumbotron-bg {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(255, 242, 242, 0.6) 0%,
+      rgba(255, 255, 255, 0.6) 100%
+    ),
+    url(./assets/home-jumbotron.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.titlehome {
+  font-size: 24px;
+  margin-block: 30px;
+}
+
+.card-border {
+  border: 0px solid black;
+  border-radius: 10px;
+}
+
+.windustry {
+  width: 75%;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(255, 242, 242, 0.6) 0%,
+      rgba(255, 255, 255, 0.6) 100%
+    ),
+    url(./assets/home-industry.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.faq {
+  width: 400px;
+}
