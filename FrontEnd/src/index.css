@@ -12,7 +12,7 @@ body {
       rgba(255, 242, 242, 0.6) 0%,
       rgba(255, 255, 255, 0.6) 100%
     ),
-    url(./assets/home-jumbotron.jpg);
+    url(/assets/home-jumbotron.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -37,7 +37,7 @@ body {
       rgba(255, 242, 242, 0.6) 0%,
       rgba(255, 255, 255, 0.6) 100%
     ),
-    url(./assets/home-industry.jpg);
+    url(/assets/home-industry.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

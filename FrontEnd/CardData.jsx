@@ -5,7 +5,7 @@ const productsData = [
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus voluptatum nisi asperiores optio? Autem, magni quas possimus minima quaerat delectus modi tempora harum maxime vel.',
     left: 'Rp. 1.500.000,-',
     right: 'Bandung',
-    image: '/src/assets/home-co-60.jpeg',
+    image: '/assets/home-co-60.jpeg',
   },
   {
     title: 'Ir-192',
@@ -13,7 +13,7 @@ const productsData = [
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus voluptatum nisi asperiores optio? Autem, magni quas possimus minima quaerat delectus modi tempora harum maxime vel.',
     left: 'Rp. 2.500.000,-',
     right: 'Yogyakarta',
-    image: '/src/assets/home-ir-192.jpg',
+    image: '/assets/home-ir-192.jpg',
   },
   {
     title: 'Tc-99m',
@@ -21,7 +21,7 @@ const productsData = [
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus voluptatum nisi asperiores optio? Autem, magni quas possimus minima quaerat delectus modi tempora harum maxime vel.',
     left: 'Rp. 700.000,-',
     right: 'Jakarta',
-    image: '/src/assets/home-tc-99m.jpg',
+    image: '/assets/home-tc-99m.jpg',
   },
 ];
 
@@ -32,7 +32,7 @@ const whyUsData = [
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus voluptatum nisi asperiores optio? Autem, magni quas possimus minima quaerat delectus modi tempora harum maxime vel.',
     left: '',
     right: '',
-    image: '/src/assets/home-highquality.jpg',
+    image: '/assets/home-highquality.jpg',
   },
   {
     title: 'Fast Delivery Transport',
@@ -40,7 +40,7 @@ const whyUsData = [
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus voluptatum nisi asperiores optio? Autem, magni quas possimus minima quaerat delectus modi tempora harum maxime vel.',
     left: '',
     right: '',
-    image: '/src/assets/home-fasttransport.jpg',
+    image: '/assets/home-fasttransport.jpg',
   },
   {
     title: 'Safe and Legal',
@@ -48,7 +48,7 @@ const whyUsData = [
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus voluptatum nisi asperiores optio? Autem, magni quas possimus minima quaerat delectus modi tempora harum maxime vel.',
     left: '',
     right: '',
-    image: '/src/assets/home-legalsafe.jpg',
+    image: '/assets/home-legalsafe.jpg',
   },
 ];
 
@@ -59,7 +59,7 @@ const aboutUsData = [
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem adipisci voluptatibus est suscipit. Animi voluptates aliquid voluptatum, ab expedita ipsum! Eum asperiores tenetur cumque voluptatum?',
     left: '',
     right: '',
-    image: '/src/assets/about-ilham.png',
+    image: '/assets/about-ilham.png',
   },
   {
     title: 'Daniel Chandra (Database + Server)',
@@ -67,7 +67,7 @@ const aboutUsData = [
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem adipisci voluptatibus est suscipit. Animi voluptates aliquid voluptatum, ab expedita ipsum! Eum asperiores tenetur cumque voluptatum?',
     left: '',
     right: '',
-    image: '/src/assets/about-daniel.jpeg',
+    image: '/assets/about-daniel.jpeg',
   },
   {
     title: 'Unknown',
@@ -75,7 +75,7 @@ const aboutUsData = [
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem adipisci voluptatibus est suscipit. Animi voluptates aliquid voluptatum, ab expedita ipsum! Eum asperiores tenetur cumque voluptatum?',
     left: '',
     right: '',
-    image: '/src/assets/about-sultan.png',
+    image: '/assets/about-sultan.png',
   },
 ];
 
