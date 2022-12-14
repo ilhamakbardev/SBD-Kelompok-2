@@ -30,7 +30,7 @@ export function Faq() {
   };
 
   return (
-    <div className="faq mx-auto my-0 p-10 text-center md:my-20">
+    <div className="faq mx-auto my-0 w-11/12 p-10 text-center md:my-20">
       <h1 className="mb-16 text-4xl sm:text-6xl md:mb-20">FAQ</h1>
       <Fragment>
         <Accordion
