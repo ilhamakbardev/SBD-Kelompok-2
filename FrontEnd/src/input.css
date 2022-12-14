@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .socialIcon {
+    @apply h-11 w-11 cursor-pointer rounded-full border-[1px] border-solid border-blue-400 px-2 py-1  text-pink-500 transition duration-200 hover:animate-pulse hover:text-blue-400;
+  }
+}
