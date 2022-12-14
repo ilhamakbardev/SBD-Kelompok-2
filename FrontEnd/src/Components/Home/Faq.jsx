@@ -67,7 +67,7 @@ export function Faq() {
           icon={<Icon id={3} open={open} />}
         >
           <AccordionHeader onClick={() => handleOpen(3)}>
-            What is my products broken in shipping ?
+            Is this products safe ?
           </AccordionHeader>
           <AccordionBody className="my-6">
             We're not always in the position that we want to be at. We're
