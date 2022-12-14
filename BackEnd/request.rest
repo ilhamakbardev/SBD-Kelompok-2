@@ -1,0 +1,30 @@
+# --------------------User Testing--------------------
+GET http://localhost:4500/user
+###
+
+GET http://localhost:4500/user/123
+###
+
+POST http://localhost:4500/user
+###
+
+DELETE http://localhost:4500/user/876
+###
+
+PATCH http://localhost:4500/user/564
+###
+
+# --------------------Products Testing--------------------
+GET http://localhost:4500/product
+###
+
+GET http://localhost:4500/product/232
+###
+
+POST http://localhost:4500/product
+###
+
+DELETE http://localhost:4500/product/121
+###
+
+PATCH http://localhost:4500/product/21
