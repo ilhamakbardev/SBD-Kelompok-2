@@ -1,8 +1,8 @@
-const { User } = require('../models');
+const User = require('../models/userModel');
 
 module.exports = {
   getAllUser: async (req, res) => {
-    const allUser = await User.findAll();
+    const allUser = await User.find();
     res.json({
       msg: 'success get all user data',
       data: allUser,
@@ -10,15 +10,17 @@ module.exports = {
   },
   getUserById: async (req, res) => {
     const id = req.params.id;
-    const getUser = await User.findByPk(id);
+    const getUser = await User.findById(id);
     res.json({
       msg: 'success get user by id',
       data: getUser,
     });
   },
   addUser: async (req, res) => {
-    const user = req.body;
-    await User.create(user);
+    const data = req.body;
+    const user = new User(data);
+
+    user.save();
 
     res.json({
       msg: 'user created',
@@ -27,11 +29,9 @@ module.exports = {
   },
   deleteUserById: async (req, res) => {
     const id = req.params.id;
-    const deletedUser = await User.destroy({
-      where: {
-        id,
-      },
-    });
+
+    await User.findByIdAndDelete(id);
+
     res.json({
       msg: 'user by id has successfully removed',
     });
@@ -39,9 +39,9 @@ module.exports = {
   editUser: async (req, res) => {
     const id = req.params.id;
     const editData = req.body;
-    await User.update(editData, {
-      where: { id },
-    });
+
+    await User.updateOne({ _id: id }, editData);
+
     res.json({
       msg: 'edit user successfull',
     });

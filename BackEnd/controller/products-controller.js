@@ -1,26 +1,35 @@
-const { Products } = require('../models');
+const Product = require('../models/productModel');
 
 module.exports = {
   getAllProducts: async (req, res) => {
-    const allProducts = await Products.findAll();
+    const allProducts = await Product.find();
     res.json({
-      msg: 'success get all products',
+      msg: 'success get all Product',
       data: allProducts,
     });
   },
   getProductById: async (req, res) => {
     const id = req.params.id;
-    const productData = await Products.findAll({
-      where: { id },
+    let data = '';
+
+    const productData = await Product.findById(id).then((result) => {
+      data = result;
+
+      return data;
     });
+
     res.json({
       msg: 'success get product by id',
-      data: productData,
+      data,
     });
   },
   addProduct: async (req, res) => {
     const productData = req.body;
-    await Products.create(productData);
+
+    const data = new Product(productData);
+
+    data.save();
+
     res.json({
       msg: 'success add product',
       data: productData,
@@ -29,26 +38,22 @@ module.exports = {
   deleteProductById: async (req, res) => {
     const id = req.params.id;
 
-    const deletedProduct = await Products.destroy({
-      where: {
-        id,
-      },
-    });
+    await Product.findByIdAndDelete(id);
 
+    const dataExisting = await Product.find();
     res.json({
       msg: 'success delete product',
+      data: dataExisting,
     });
   },
   editProduct: async (req, res) => {
     const id = req.params.id;
-    const editData = req.body;
-    await Products.update(editData, {
-      where: { id },
-    });
+    var conditions = { _id: id };
+
+    await Product.updateOne(conditions, req.body);
+
     res.json({
-      msg: 'sucess edit products',
-      data: editData,
-      id,
+      msg: 'sucess edit Product',
     });
   },
 };

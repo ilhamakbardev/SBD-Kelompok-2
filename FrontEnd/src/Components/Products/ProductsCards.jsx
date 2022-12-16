@@ -5,18 +5,30 @@ import {
   CardFooter,
   Typography,
 } from '@material-tailwind/react';
-
+import axios from 'axios';
 import { Button } from '@material-tailwind/react';
 
 function ProductsCard(props) {
   const products = props.propsData;
 
-  const handleEdit = () => {
-    alert('edit');
+  const handleEdit = (card) => {
+    Swal.fire({
+      icon: 'error',
+      title: 'cannot edit!',
+      text: 'edit feature coming',
+    });
   };
 
-  const handleDelete = () => {
-    alert('delete');
+  const handleDelete = (id) => {
+    axios.delete(`http://localhost:4500/product/${id}`).then((response) => {
+      setProducts([response.data]);
+    });
+
+    Swal.fire({
+      icon: 'success',
+      title: 'success!',
+      text: 'success deleted data',
+    });
   };
 
   return (
@@ -56,13 +68,17 @@ function ProductsCard(props) {
             <div className="mx-auto flex justify-center p-5">
               <Button
                 className="mx-5 bg-yellow-400 text-black"
-                onClick={handleEdit}
+                onClick={() => {
+                  handleEdit(card);
+                }}
               >
                 Edit
               </Button>
               <Button
                 className="mx-5 bg-red-400 text-black"
-                onClick={handleDelete}
+                onClick={() => {
+                  handleDelete(card.id);
+                }}
               >
                 Delete
               </Button>

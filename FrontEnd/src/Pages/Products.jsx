@@ -4,6 +4,7 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { Button } from '@material-tailwind/react';
 import * as Yup from 'yup';
 import ProductsCard from '../Components/Products/ProductsCards';
+import { redirect } from 'react-router-dom';
 
 const Products = () => {
   const [display, setDisplay] = useState(false);
@@ -53,9 +54,11 @@ const Products = () => {
 
       Swal.fire({
         icon: 'success',
-        title: 'Berhasil input product',
-        text: 'silahkan klik tombol "Back To Product" diatas!',
+        title: 'Success!',
+        text: 'Berhasil input product',
       });
+
+      setDisplay((display) => !display);
     };
 
     const validationSchema = Yup.object().shape({
