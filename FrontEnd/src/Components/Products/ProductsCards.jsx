@@ -11,13 +11,21 @@ import { Button } from '@material-tailwind/react';
 function ProductsCard(props) {
   const products = props.propsData;
 
+  const handleEdit = () => {
+    alert('edit');
+  };
+
+  const handleDelete = () => {
+    alert('delete');
+  };
+
   return (
     <div className="mx-auto my-8 flex flex-wrap justify-center sm:w-2/3 md:w-11/12">
       {products.map((card) => {
         return (
           <Card
             className="mx-auto mb-5 w-96 bg-slate-100 p-3 shadow-2xl"
-            key={card.title}
+            key={card.id}
           >
             <CardHeader color="blue" className="relative mb-3 h-56 p-5">
               <img
@@ -46,8 +54,18 @@ function ProductsCard(props) {
               </Typography>
             </CardFooter>
             <div className="mx-auto flex justify-center p-5">
-              <Button className="mx-5 bg-yellow-400 text-black">Edit</Button>
-              <Button className="mx-5 bg-red-400 text-black">Delete</Button>
+              <Button
+                className="mx-5 bg-yellow-400 text-black"
+                onClick={handleEdit}
+              >
+                Edit
+              </Button>
+              <Button
+                className="mx-5 bg-red-400 text-black"
+                onClick={handleDelete}
+              >
+                Delete
+              </Button>
             </div>
           </Card>
         );
