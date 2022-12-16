@@ -47,7 +47,9 @@ const Products = () => {
     };
 
     const onSubmit = (data) => {
-      console.log(data);
+      axios.post('http://localhost:4500/product', data).then((response) => {
+        setProducts((products) => [...products, response.data]);
+      });
     };
 
     const validationSchema = Yup.object().shape({
