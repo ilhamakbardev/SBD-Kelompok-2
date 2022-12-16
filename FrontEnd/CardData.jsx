@@ -70,7 +70,7 @@ const aboutUsData = [
     image: '/assets/about-daniel.jpeg',
   },
   {
-    title: 'Unknown',
+    title: 'Sultan Syahid Hidayatullah Gummay (User Manual)',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem adipisci voluptatibus est suscipit. Animi voluptates aliquid voluptatum, ab expedita ipsum! Eum asperiores tenetur cumque voluptatum?',
     left: '',
