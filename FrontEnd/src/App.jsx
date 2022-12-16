@@ -6,7 +6,7 @@ import Navbar from './Components/Navbar';
 
 import Home from './Pages/Home';
 import About from './Pages/About';
-import Products from './Pages/Products';
+import { Products } from './Pages/Products';
 import Transaction from './Pages/Transaction';
 import Login from './Pages/Login';
 

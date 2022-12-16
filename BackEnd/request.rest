@@ -2,29 +2,67 @@
 GET http://localhost:4500/user
 ###
 
-GET http://localhost:4500/user/123
+GET http://localhost:4500/user/126
 ###
 
-POST http://localhost:4500/user
+POST http://localhost:4500/user HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "ilham",
+    "email": "ilhamganteng@gmail.com",
+    "password": "ilhamgantengbgt",
+    "address": "rumah",
+    "company": "PT. Nuklindo"
+}
+
 ###
 
-DELETE http://localhost:4500/user/876
+DELETE http://localhost:4500/user/126
 ###
 
-PATCH http://localhost:4500/user/564
+PATCH http://localhost:4500/user/127 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "ilham updated",
+    "email": "ilhamganteng@gmail.com",
+    "password": "ilhamgantengbgt",
+    "address": "rumah",
+    "company": "PT. Nuklindo"
+}
 ###
 
 # --------------------Products Testing--------------------
 GET http://localhost:4500/product
 ###
 
-GET http://localhost:4500/product/232
+GET http://localhost:4500/product/4
 ###
 
-POST http://localhost:4500/product
+POST http://localhost:4500/product HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Ir-192",
+    "description": "this product usually used for industrial NDT",
+    "left": "Rp. 3.500.000,-",
+    "right": "Jakarta",
+    "image": "https://www.oserix.com/web/image/887/ir_attachment_2963.png"
+}
+
 ###
 
-DELETE http://localhost:4500/product/121
+DELETE http://localhost:4500/product/3
 ###
 
-PATCH http://localhost:4500/product/21
+PATCH http://localhost:4500/product/3 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Ir-192 updated",
+    "description": "this product usually used for industrial NDT",
+    "left": "Rp. 2.500.000,-",
+    "right": "Batam",
+    "image": "https://www.oserix.com/web/image/887/ir_attachment_2963.png"
+}
