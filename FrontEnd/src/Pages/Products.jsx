@@ -3,7 +3,7 @@ import axios from 'axios';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { Button } from '@material-tailwind/react';
 import * as Yup from 'yup';
-import Cards from '../Components/Home/Cards';
+import ProductsCard from '../Components/Products/ProductsCards';
 
 const Products = () => {
   const [display, setDisplay] = useState(false);
@@ -32,7 +32,7 @@ const Products = () => {
           Add Product
         </Button>
 
-        <Cards propsData={products} />
+        <ProductsCard propsData={products} />
       </div>
     );
   };
@@ -49,6 +49,12 @@ const Products = () => {
     const onSubmit = (data) => {
       axios.post('http://localhost:4500/product', data).then((response) => {
         setProducts((products) => [...products, response.data]);
+      });
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Berhasil input product',
+        text: 'silahkan klik tombol "Back To Product" diatas!',
       });
     };
 
