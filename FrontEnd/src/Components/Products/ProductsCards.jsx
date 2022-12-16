@@ -20,9 +20,11 @@ function ProductsCard(props) {
   };
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:4500/product/${id}`).then((response) => {
-      setProducts([response.data]);
-    });
+    axios
+      .delete(`https://sbd-kelompok-2-production.up.railway.app//${id}`)
+      .then((response) => {
+        setProducts([response.data]);
+      });
 
     Swal.fire({
       icon: 'success',
@@ -37,7 +39,7 @@ function ProductsCard(props) {
         return (
           <Card
             className="mx-auto mb-5 w-96 bg-slate-100 p-3 shadow-2xl"
-            key={card.id}
+            key={card._id}
           >
             <CardHeader color="blue" className="relative mb-3 h-56 p-5">
               <img
@@ -77,7 +79,7 @@ function ProductsCard(props) {
               <Button
                 className="mx-5 bg-red-400 text-black"
                 onClick={() => {
-                  handleDelete(card.id);
+                  handleDelete(card._id);
                 }}
               >
                 Delete

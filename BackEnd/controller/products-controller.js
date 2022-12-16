@@ -2,58 +2,88 @@ const Product = require('../models/productModel');
 
 module.exports = {
   getAllProducts: async (req, res) => {
-    const allProducts = await Product.find();
-    res.json({
-      msg: 'success get all Product',
-      data: allProducts,
-    });
+    try {
+      const allProducts = await Product.find();
+      res.json({
+        msg: 'success get all Product',
+        data: allProducts,
+      });
+    } catch (err) {
+      res.json({
+        error: `${err.message}`,
+      });
+    }
   },
   getProductById: async (req, res) => {
-    const id = req.params.id;
-    let data = '';
+    try {
+      const id = req.params.id;
+      let data = '';
 
-    const productData = await Product.findById(id).then((result) => {
-      data = result;
+      const productData = await Product.findById(id).then((result) => {
+        data = result;
 
-      return data;
-    });
+        return data;
+      });
 
-    res.json({
-      msg: 'success get product by id',
-      data,
-    });
+      res.json({
+        msg: 'success get product by id',
+        data,
+      });
+    } catch (err) {
+      res.json({
+        error: `${err.message}`,
+      });
+    }
   },
   addProduct: async (req, res) => {
-    const productData = req.body;
+    try {
+      const productData = req.body;
 
-    const data = new Product(productData);
+      const data = new Product(productData);
 
-    data.save();
+      data.save();
 
-    res.json({
-      msg: 'success add product',
-      data: productData,
-    });
+      res.json({
+        msg: 'success add product',
+        data: productData,
+      });
+    } catch (err) {
+      res.json({
+        error: `${err.message}`,
+      });
+    }
   },
   deleteProductById: async (req, res) => {
-    const id = req.params.id;
+    try {
+      const id = req.params.id;
 
-    await Product.findByIdAndDelete(id);
+      await Product.findByIdAndDelete(id);
 
-    const dataExisting = await Product.find();
-    res.json({
-      msg: 'success delete product',
-      data: dataExisting,
-    });
+      const dataExisting = await Product.find();
+      res.json({
+        msg: 'success delete product',
+        data: dataExisting,
+      });
+    } catch (err) {
+      res.json({
+        error: `${err.message}`,
+      });
+    }
   },
   editProduct: async (req, res) => {
-    const id = req.params.id;
-    var conditions = { _id: id };
+    try {
+      const id = req.params.id;
+      var conditions = { _id: id };
 
-    await Product.updateOne(conditions, req.body);
+      await Product.updateOne(conditions, req.body);
 
-    res.json({
-      msg: 'sucess edit Product',
-    });
+      res.json({
+        msg: 'sucess edit Product',
+      });
+    } catch (err) {
+      res.json({
+        error: `${err.message}`,
+      });
+    }
   },
 };
