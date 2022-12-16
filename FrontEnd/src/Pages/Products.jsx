@@ -12,9 +12,11 @@ const Products = () => {
 
   useEffect(() => {
     const call = () => {
-      axios.get('http://localhost:4500/product').then((result) => {
-        setProducts(result.data.data);
-      });
+      axios
+        .get('https://sbd-kelompok-2-production.up.railway.app/product')
+        .then((result) => {
+          setProducts(result.data.data);
+        });
     };
 
     call();
@@ -48,9 +50,11 @@ const Products = () => {
     };
 
     const onSubmit = (data) => {
-      axios.post('http://localhost:4500/product', data).then((response) => {
-        setProducts((products) => [...products, response.data]);
-      });
+      axios
+        .post('https://sbd-kelompok-2-production.up.railway.app/product', data)
+        .then((response) => {
+          setProducts((products) => [...products, response.data]);
+        });
 
       Swal.fire({
         icon: 'success',
