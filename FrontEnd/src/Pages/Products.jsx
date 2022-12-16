@@ -17,7 +17,7 @@ const Products = () => {
     };
 
     call();
-  }, []);
+  }, [products]);
 
   const productDisplay = () => {
     return (
