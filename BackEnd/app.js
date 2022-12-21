@@ -6,9 +6,12 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-connect(process.env.URL, () => {
-  console.log('database connected');
-});
+connect(
+  'mongodb+srv://ilham:Qazwsx2134@cluster0.0akzywa.mongodb.net/?retryWrites=true&w=majority',
+  () => {
+    console.log('database connected');
+  }
+);
 
 const allRoutes = require('./api/index');
 
@@ -17,6 +20,8 @@ app.use(cors());
 
 app.use(allRoutes);
 
-app.listen(process.env.PORT, () => {
-  console.log(`server running on port ${process.env.PORT}`);
+const PORT = 4000;
+
+app.listen(PORT, () => {
+  console.log(`server running on port ${PORT}`);
 });
