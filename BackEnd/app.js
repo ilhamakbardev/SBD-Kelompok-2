@@ -6,6 +6,8 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
+app.use(cors());
+
 connect(
   'mongodb+srv://ilham:Qazwsx2134@cluster0.0akzywa.mongodb.net/?retryWrites=true&w=majority',
   () => {
@@ -16,7 +18,6 @@ connect(
 const allRoutes = require('./api/index');
 
 app.use(bodyParser.json());
-app.use(cors());
 
 app.use(allRoutes);
 
