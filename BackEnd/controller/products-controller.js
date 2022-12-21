@@ -56,9 +56,7 @@ module.exports = {
   deleteProductById: async (req, res) => {
     try {
       const id = req.params.id;
-
       await Product.findByIdAndDelete(id);
-
       const dataExisting = await Product.find();
       res.json({
         msg: 'success delete product',
@@ -74,11 +72,12 @@ module.exports = {
     try {
       const id = req.params.id;
       var conditions = { _id: id };
-
       await Product.updateOne(conditions, req.body);
 
+      const dataExisting = await Product.find();
       res.json({
         msg: 'sucess edit Product',
+        data: dataExisting,
       });
     } catch (err) {
       res.json({

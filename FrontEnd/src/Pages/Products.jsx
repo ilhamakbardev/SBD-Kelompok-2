@@ -3,12 +3,13 @@ import axios from 'axios';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { Button } from '@material-tailwind/react';
 import * as Yup from 'yup';
-import ProductsCard from '../Components/Products/ProductsCards';
-import { redirect } from 'react-router-dom';
+import { ProductsCard } from '../Components/Products/ProductsCards';
 
 const Products = () => {
   const [display, setDisplay] = useState(false);
   const [products, setProducts] = useState([]);
+  const [edit, setEdit] = useState(false);
+  const [id, setId] = useState('');
 
   useEffect(() => {
     const call = () => {
@@ -35,7 +36,17 @@ const Products = () => {
           Add Product
         </Button>
 
-        <ProductsCard propsData={products} />
+        <h1 className="text-black">{id}</h1>
+
+        <ProductsCard
+          display={display}
+          setDisplay={setDisplay}
+          edit={edit}
+          setEdit={setEdit}
+          propsData={products}
+          id={id}
+          setId={setId}
+        />
       </div>
     );
   };
@@ -50,17 +61,37 @@ const Products = () => {
     };
 
     const onSubmit = (data) => {
-      axios
-        .post('https://sbd-kelompok-2-production.up.railway.app/product', data)
-        .then((response) => {
-          setProducts((products) => [...products, response.data]);
-        });
+      if (id === '') {
+        axios
+          .post(
+            'https://sbd-kelompok-2-production.up.railway.app/product',
+            data
+          )
+          .then((response) => {
+            setProducts((products) => [...products, response.data]);
+          });
 
-      Swal.fire({
-        icon: 'success',
-        title: 'Success!',
-        text: 'Berhasil input product',
-      });
+        Swal.fire({
+          icon: 'success',
+          title: 'Success!',
+          text: 'Berhasil input product',
+        });
+      } else {
+        axios
+          .patch(
+            'https://sbd-kelompok-2-production.up.railway.app/product',
+            data
+          )
+          .then((response) => {
+            setProducts((products) => [...products, response.data]);
+          });
+
+        Swal.fire({
+          icon: 'success',
+          title: 'Success!',
+          text: 'Berhasil edit product',
+        });
+      }
 
       setDisplay((display) => !display);
     };
@@ -82,7 +113,9 @@ const Products = () => {
           color="blue"
           className="my-8 text-black"
           onClick={() => {
-            setDisplay((display) => !display);
+            setDisplay(false);
+            setEdit(false);
+            setId('');
           }}
         >
           Back To Product
@@ -100,7 +133,7 @@ const Products = () => {
               component="span"
             />
 
-            <label>Product Name : </label>
+            <label>Product Name : `${id}`</label>
             <Field
               id="inputProduct"
               name="title"
@@ -171,7 +204,7 @@ const Products = () => {
               className="m-1 mx-auto mb-5 mt-5 w-4/5 rounded-2xl border-[1px] bg-blue-400 px-2 py-3 text-black"
               type="submit"
             >
-              Add Product
+              {edit ? 'Edit Product' : 'Add Product'}
             </Button>
           </Form>
         </Formik>
