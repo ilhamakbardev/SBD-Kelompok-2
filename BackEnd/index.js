@@ -10,7 +10,7 @@ connect(process.env.URL, () => {
   console.log('database connected');
 });
 
-const allRoutes = require('./router');
+const allRoutes = require('./api/index');
 
 app.use(bodyParser.json());
 app.use(cors());

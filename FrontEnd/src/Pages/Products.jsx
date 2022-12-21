@@ -13,11 +13,9 @@ const Products = () => {
 
   useEffect(() => {
     const call = () => {
-      axios
-        .get('https://sbd-kelompok-2-production.up.railway.app/product')
-        .then((result) => {
-          setProducts(result.data.data);
-        });
+      axios.get('https://sbd-kelompok-2.vercel.app/product').then((result) => {
+        setProducts(result.data.data);
+      });
     };
 
     call();
@@ -63,10 +61,7 @@ const Products = () => {
     const onSubmit = (data) => {
       if (id === '') {
         axios
-          .post(
-            'https://sbd-kelompok-2-production.up.railway.app/product',
-            data
-          )
+          .post('https://sbd-kelompok-2.vercel.app/product', data)
           .then((response) => {
             setProducts((products) => [...products, response.data]);
           });
@@ -78,10 +73,7 @@ const Products = () => {
         });
       } else {
         axios
-          .patch(
-            'https://sbd-kelompok-2-production.up.railway.app/product',
-            data
-          )
+          .patch('https://sbd-kelompok-2.vercel.app/product', data)
           .then((response) => {
             setProducts((products) => [...products, response.data]);
           });

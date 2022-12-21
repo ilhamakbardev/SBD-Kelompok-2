@@ -21,7 +21,7 @@ function ProductsCard(props) {
 
   const handleDelete = (id) => {
     axios
-      .delete(`https://sbd-kelompok-2-production.up.railway.app/product/${id}`)
+      .delete(`https://sbd-kelompok-2.vercel.app/product/${id}`)
       .then((response) => {
         setProducts([response.data]);
       });

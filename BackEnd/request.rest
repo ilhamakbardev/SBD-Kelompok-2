@@ -34,7 +34,7 @@ Content-Type: application/json
 ###
 
 # --------------------Products Testing--------------------
-GET https://sbd-kelompok-2-production.up.railway.app/product
+GET https://sbd-kelompok-2.vercel.app/product
 ###
 
 GET https://sbd-kelompok-2-production.up.railway.app/product/639c8c2b4e77aae38745f7df
@@ -53,7 +53,7 @@ Content-Type: application/json
 
 ###
 
-DELETE https://sbd-kelompok-2-production.up.railway.app/product/639c8c2b4e77aae38745f7df
+DELETE https://sbd-kelompok-2-production.up.railway.app/product/639c93d0aaaa0c994f6a8c99
 ###
 
 PATCH https://sbd-kelompok-2-production.up.railway.app/product/639c8c3c4e77aae38745f7e2 HTTP/1.1
