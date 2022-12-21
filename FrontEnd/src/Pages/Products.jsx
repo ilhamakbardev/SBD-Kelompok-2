@@ -10,6 +10,7 @@ const Products = () => {
   const [products, setProducts] = useState([]);
   const [edit, setEdit] = useState(false);
   const [id, setId] = useState('');
+  const [cardValue, setCardValue] = useState('');
 
   useEffect(() => {
     const call = () => {
@@ -33,17 +34,12 @@ const Products = () => {
         >
           Add Product
         </Button>
-
-        <h1 className="text-black">{id}</h1>
-
         <ProductsCard
-          display={display}
           setDisplay={setDisplay}
-          edit={edit}
           setEdit={setEdit}
           propsData={products}
-          id={id}
           setId={setId}
+          setCardValue={setCardValue}
         />
       </div>
     );
@@ -51,7 +47,7 @@ const Products = () => {
 
   const addProduct = () => {
     const initialValues = {
-      name: '',
+      title: '',
       description: '',
       image: '',
       left: '',
@@ -73,7 +69,7 @@ const Products = () => {
         });
       } else {
         axios
-          .patch('https://sbd-kelompok-2.vercel.app/product', data)
+          .patch(`https://sbd-kelompok-2.vercel.app/product/${id}`, data)
           .then((response) => {
             setProducts((products) => [...products, response.data]);
           });
@@ -108,6 +104,7 @@ const Products = () => {
             setDisplay(false);
             setEdit(false);
             setId('');
+            setCardValue('');
           }}
         >
           Back To Product
@@ -124,16 +121,14 @@ const Products = () => {
               name="title"
               component="span"
             />
-
             <label>Product Name : `${id}`</label>
             <Field
               id="inputProduct"
               name="title"
-              placeholder="product name..."
-              autoComplete="off"
+              placeholder={cardValue ? cardValue.title : 'product name...'}
+              autoComplete="on"
               className="m-1 mx-auto mb-5 w-4/5 rounded-2xl border-[1px] border-blue-400 px-2 py-3 text-black"
             />
-
             <ErrorMessage
               className="text-bold mb-5 text-red-600"
               name="description"
@@ -143,11 +138,12 @@ const Products = () => {
             <Field
               id="inputDescription"
               name="description"
-              placeholder="product description..."
-              autoComplete="off"
+              placeholder={
+                cardValue ? cardValue.description : 'product description...'
+              }
+              autoComplete="on"
               className="m-1 mx-auto mb-5 w-4/5 rounded-2xl border-[1px] border-blue-400 px-2 py-3 text-black"
             />
-
             <ErrorMessage
               className="text-bold mb-5 text-red-600"
               name="left"
@@ -157,11 +153,10 @@ const Products = () => {
             <Field
               id="inputProduct"
               name="left"
-              placeholder="price.."
-              autoComplete="off"
+              placeholder={cardValue ? cardValue.left : 'price..'}
+              autoComplete="on"
               className="m-1 mx-auto mb-5 w-4/5 rounded-2xl border-[1px] border-blue-400 px-2 py-3 text-black"
             />
-
             <ErrorMessage
               className="text-bold mb-5 text-red-600"
               name="right"
@@ -171,11 +166,10 @@ const Products = () => {
             <Field
               id="inputPlace"
               name="right"
-              placeholder="price.."
-              autoComplete="off"
+              placeholder={cardValue ? cardValue.right : "product's place.."}
+              autoComplete="on"
               className="m-1 mx-auto mb-5 w-4/5 rounded-2xl border-[1px] border-blue-400 px-2 py-3 text-black"
             />
-
             <ErrorMessage
               className="text-bold mb-5 text-red-600"
               name="image"
@@ -185,8 +179,8 @@ const Products = () => {
             <Field
               id="inputProduct"
               name="image"
-              placeholder="img url..."
-              autoComplete="off"
+              placeholder={cardValue ? cardValue.image : 'img url...'}
+              autoComplete="on"
               className="m-1 mx-auto mb-5 w-4/5 rounded-2xl border-[1px] border-blue-400 px-2 py-3 text-black"
             />
 

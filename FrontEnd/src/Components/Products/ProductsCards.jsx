@@ -11,12 +11,11 @@ import { Button } from '@material-tailwind/react';
 function ProductsCard(props) {
   const products = props.propsData;
 
-  const handleEdit = (id) => {
+  const handleEdit = (card) => {
     props.setEdit(true);
     props.setDisplay(true);
-    props.setId(id);
-
-    alert(props.id);
+    props.setId(card._id);
+    props.setCardValue(card);
   };
 
   const handleDelete = (id) => {
@@ -71,7 +70,7 @@ function ProductsCard(props) {
               <Button
                 className="mx-5 bg-yellow-400 text-black"
                 onClick={() => {
-                  handleEdit(card._id);
+                  handleEdit(card);
                 }}
               >
                 Edit
