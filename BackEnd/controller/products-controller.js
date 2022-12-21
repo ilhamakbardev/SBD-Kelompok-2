@@ -3,8 +3,6 @@ const Product = require('../models/productModel');
 module.exports = {
   getAllProducts: async (req, res) => {
     try {
-      const allProducts = await Product.find();
-
       res.setHeader('Access-Control-Allow-Credentials', true);
       res.setHeader('Access-Control-Allow-Origin', '*');
       // another common pattern
@@ -17,6 +15,8 @@ module.exports = {
         'Access-Control-Allow-Headers',
         'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
       );
+
+      const allProducts = await Product.find();
 
       res.json({
         msg: 'success get all Product',
