@@ -6,7 +6,11 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    credentials: true,
+  })
+);
 
 connect(
   'mongodb+srv://ilham:Qazwsx2134@cluster0.0akzywa.mongodb.net/?retryWrites=true&w=majority',
