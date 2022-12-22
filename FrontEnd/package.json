@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.5",
+    "@heroicons/react": "^2.0.13",
     "@material-tailwind/react": "^1.2.4",
     "axios": "^1.2.1",
     "formik": "^2.2.9",

@@ -6,11 +6,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-app.use(
-  cors({
-    origin: 'https://belajar-db.vercel.app/',
-  })
-);
+app.use(cors());
 
 connect(
   'mongodb+srv://ilham:Qazwsx2134@cluster0.0akzywa.mongodb.net/?retryWrites=true&w=majority',
