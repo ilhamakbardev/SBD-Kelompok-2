@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -10,6 +10,14 @@ const Login = () => {
   const [registerPassword, setRegisterPassword] = useState('');
   const [registerName, setRegisterName] = useState('');
   const [registerAvatar, setRegisterAvatar] = useState('');
+
+  useEffect(() => {
+    Swal.fire({
+      icon: 'error',
+      title: 'Not Available!',
+      text: 'Login feature is under maintenance, it not works yet',
+    });
+  }, []);
 
   const LoginForm = () => {
     return (

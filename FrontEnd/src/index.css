@@ -44,3 +44,9 @@ body {
 .faq {
   width: 400px;
 }
+
+.tengah {
+  max-width: 50%;
+  margin-left: 50%;
+  margin-right: 50%;
+}

@@ -4,27 +4,58 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { Button } from '@material-tailwind/react';
 import * as Yup from 'yup';
 import { ProductsCard } from '../Components/Products/ProductsCards';
+import { Input } from '@material-tailwind/react';
+import { Dna } from 'react-loader-spinner';
 
 const Products = () => {
   const [display, setDisplay] = useState(false);
   const [products, setProducts] = useState([]);
+  const [productSearchData, setProductSearchData] = useState([]);
   const [edit, setEdit] = useState(false);
   const [id, setId] = useState('');
   const [cardValue, setCardValue] = useState('');
+  const [search, setSearch] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const call = () => {
-      axios.get('https://sbd-kelompok-2.vercel.app/product').then((result) => {
-        setProducts(result.data.data);
-      });
+      axios
+        .get('https://sbd-kelompok-2.vercel.app/product')
+        .then((result) => {
+          if (!search) {
+            setProducts(result.data.data);
+          }
+        })
+        .then(() => setIsLoading(true));
     };
 
     call();
   }, [products]);
 
   const productDisplay = () => {
+    const changeInput = (e) => {
+      const value = e.target.value;
+      setSearch(value);
+
+      const productSearch = products.filter((product) => {
+        return product.title.toLowerCase().includes(search.toLowerCase());
+      });
+
+      setProducts(productSearch);
+    };
+
     return (
       <div className="mx-auto text-center">
+        <div className="mx-auto my-8 w-72">
+          <Input
+            className="my-8 pt-8"
+            variant="outlined"
+            placeholder="search products.."
+            onChange={changeInput}
+          />
+          <h1>{search ? `you search : ${search}` : ''}</h1>
+        </div>
+
         <Button
           color="blue"
           className="my-8 w-40 text-black"
@@ -198,7 +229,22 @@ const Products = () => {
     );
   };
 
-  return <div>{!display ? productDisplay() : addProduct()}</div>;
+  const loading = () => {
+    return (
+      <div className="tengah mx-auto my-8 text-center">
+        <div className="tengah mx-auto my-8">
+          <Dna className="tengah mx-auto my-8 bg-black" />
+        </div>
+        <h1 className="tengah mx-auto my-8">Loading...</h1>
+      </div>
+    );
+  };
+
+  return (
+    <div>
+      {!isLoading ? loading() : !display ? productDisplay() : addProduct()}
+    </div>
+  );
 };
 
 export { Products };

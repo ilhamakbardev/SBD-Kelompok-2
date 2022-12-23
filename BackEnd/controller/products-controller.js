@@ -49,6 +49,21 @@ module.exports = {
       });
     }
   },
+  getProductsByTitle: async (req, res) => {
+    try {
+      const title = req.body;
+      const data = await Product.find({ title });
+
+      res.json({
+        msg: 'success get data',
+        data,
+      });
+    } catch (err) {
+      res.json({
+        error: `${err.message}`,
+      });
+    }
+  },
   addProduct: async (req, res) => {
     try {
       const productData = req.body;
