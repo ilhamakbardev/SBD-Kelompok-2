@@ -152,7 +152,7 @@ const Products = () => {
               name="title"
               component="span"
             />
-            <label>Product Name : `${id}`</label>
+            <label>Product Name :</label>
             <Field
               id="inputProduct"
               name="title"
