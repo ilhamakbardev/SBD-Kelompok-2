@@ -2,32 +2,32 @@
 GET https://sbd-kelompok-2.vercel.app/user
 ###
 
-GET https://sbd-kelompok-2.vercel.app/user/639c8a8b42314770f1f3e881
+GET https://sbd-kelompok-2.vercel.app/user/639c8a8542314770f1f3e87f
 ###
 
 POST https://sbd-kelompok-2.vercel.app/user HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "ilham",
-    "email": "ilhamganteng@gmail.com",
-    "password": "ilhamgantengbgt",
+    "name": "daniel",
+    "email": "daniel@gmail.com",
+    "password": "secretpasswordthatyoucantguess",
     "address": "rumah",
-    "company": "PT. Nuklindo"
+    "company": "PT. IndRadiance"
 }
 
 ###
 
-DELETE https://sbd-kelompok-2.vercel.app/user/639c8a8b42314770f1f3e881
+DELETE https://sbd-kelompok-2.vercel.app/user/63a6d61aa698fe645f1e2583
 ###
 
-PATCH https://sbd-kelompok-2.vercel.app/user/639c8a8542314770f1f3e87f HTTP/1.1
+PATCH https://sbd-kelompok-2.vercel.app/user/63a6d9891b99d03401eb5408 HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "ilham updated",
-    "email": "ilhamganteng@gmail.com",
-    "password": "ilhamgantengbgt",
+    "name": "daniel updated",
+    "email": "danielupdated@gmail.com",
+    "password": "secretpasswordthatyoucantguess",
     "address": "rumah",
     "company": "PT. Nuklindo"
 }
@@ -37,7 +37,7 @@ Content-Type: application/json
 GET https://sbd-kelompok-2.vercel.app/product
 ###
 
-GET https://sbd-kelompok-2.vercel.app/product/639c8c2b4e77aae38745f7df
+GET https://sbd-kelompok-2.vercel.app/product/63a2af04c88ec0ff9b0a8349
 ###
 
 POST https://sbd-kelompok-2.vercel.app/product HTTP/1.1
@@ -50,13 +50,12 @@ Content-Type: application/json
     "right": "Jakarta",
     "image": "https://www.oserix.com/web/image/887/ir_attachment_2963.png"
 }
-
 ###
 
-DELETE https://sbd-kelompok-2.vercel.app/product/639c93d0aaaa0c994f6a8c99
+DELETE https://sbd-kelompok-2.vercel.app/product/63a6fe6107e0672d57d36c97
 ###
 
-PATCH https://sbd-kelompok-2.vercel.app/product/639c8c3c4e77aae38745f7e2 HTTP/1.1
+PATCH https://sbd-kelompok-2.vercel.app/product/63a6fe6107e0672d57d36c97 HTTP/1.1
 Content-Type: application/json
 
 {
